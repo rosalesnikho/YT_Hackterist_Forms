@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!-- Must add xmlns in order to use Thymeleaf -->
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Address</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+          integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <h1>Address</h1>
+    <div class="row">
+        <div class="col align-self-center">
+            <form action="/address" method="POST" th:object="${address}">
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Address</label>
+                    <input th:field="*{streetAddress}" type="text" class="form-control" id="exampleFormControlInput1" placeholder="123 Main St">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput2" class="form-label">City</label>
+                    <input th:field="*{city}" type="text" class="form-control" id="exampleFormControlInput2" placeholder="New York">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput3" class="form-label">State</label>
+                    <select th:field="*{state}" id="exampleFormControlInput3" class="form-select" aria-label="Default select example">
+                        <option th:value="TX" th:text="*{'TX'}"></option>
+                        <option th:value="CA" th:text="*{'CA'}"></option>
+                        <option th:value="KY" th:text="*{'KY'}"></option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label  for="exampleFormControlInput4" class="form-label">Zipcode</label>
+                    <input th:field="*{zipcode}" type="text" class="form-control" id="exampleFormControlInput4" placeholder="12345">
+                </div>
+                <div class="col-auto">
+                    <button type="submit" class="btn btn-primary mb-3">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

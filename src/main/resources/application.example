@@ -1,0 +1,6 @@
+#Add db connection
+spring.datasource.url=jdbc:mysql://localhost/ENTER_DB_NAME_HERE?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC
+spring.datasource.username=USERNAME
+spring.datasource.password=PASSWORD
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
